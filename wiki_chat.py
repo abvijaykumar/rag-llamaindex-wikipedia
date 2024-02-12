@@ -19,7 +19,7 @@ service_context = ServiceContext.from_defaults(llm=llm)
 WikipediaReader = download_loader("WikipediaReader")
 
 loader = WikipediaReader()
-documents = loader.load_data(pages=['Star Wars Movie'])
+documents = loader.load_data(pages=['Star Wars Movie', 'Star Trek Movie'])
 index = VectorStoreIndex.from_documents(documents)
 index.storage_context.persist(persist_dir=storage_path)
 
